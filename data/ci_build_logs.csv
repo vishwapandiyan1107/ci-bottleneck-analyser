@@ -1,0 +1,266 @@
+build_id,pipeline,branch,task,task_start,task_end,duration_sec,queue_time_sec,cache_hit,agent_id,agent_utilisation,dependency_group,ground_truth
+B-CACHE-1,"web-app / PR",feat/checkout,"Dependency install",2026-09-07T19:22:20.799Z,2026-09-07T19:26:20.799Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-2,"web-app / main",fix/alerts,"Dependency install",2026-09-07T18:22:20.800Z,2026-09-07T18:26:20.800Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-3,"web-app / PR",main,"Dependency install",2026-09-07T17:22:20.800Z,2026-09-07T17:26:20.800Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-4,"web-app / main",feat/checkout,"Dependency install",2026-09-07T16:22:20.800Z,2026-09-07T16:26:20.800Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-5,"web-app / PR",fix/alerts,"Dependency install",2026-09-07T15:22:20.800Z,2026-09-07T15:26:20.800Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-6,"web-app / main",main,"Dependency install",2026-09-07T14:22:20.800Z,2026-09-07T14:26:20.800Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-7,"web-app / PR",feat/checkout,"Dependency install",2026-09-07T13:22:20.800Z,2026-09-07T13:26:20.800Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-8,"web-app / main",fix/alerts,"Dependency install",2026-09-07T12:22:20.800Z,2026-09-07T12:26:20.800Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-9,"web-app / PR",main,"Dependency install",2026-09-07T11:22:20.801Z,2026-09-07T11:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-10,"web-app / main",feat/checkout,"Dependency install",2026-09-07T10:22:20.801Z,2026-09-07T10:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-11,"web-app / PR",fix/alerts,"Dependency install",2026-09-07T09:22:20.801Z,2026-09-07T09:26:20.801Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-12,"web-app / main",main,"Dependency install",2026-09-07T08:22:20.801Z,2026-09-07T08:26:20.801Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-13,"web-app / PR",feat/checkout,"Dependency install",2026-09-07T07:22:20.801Z,2026-09-07T07:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-14,"web-app / main",fix/alerts,"Dependency install",2026-09-07T06:22:20.801Z,2026-09-07T06:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-15,"web-app / PR",main,"Dependency install",2026-09-07T05:22:20.801Z,2026-09-07T05:26:20.801Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-16,"web-app / main",feat/checkout,"Dependency install",2026-09-07T04:22:20.801Z,2026-09-07T04:26:20.801Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-17,"web-app / PR",fix/alerts,"Dependency install",2026-09-07T03:22:20.801Z,2026-09-07T03:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-18,"web-app / main",main,"Dependency install",2026-09-07T02:22:20.801Z,2026-09-07T02:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-19,"web-app / PR",feat/checkout,"Dependency install",2026-09-07T01:22:20.801Z,2026-09-07T01:26:20.801Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-20,"web-app / main",fix/alerts,"Dependency install",2026-09-07T00:22:20.801Z,2026-09-07T00:26:20.801Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-21,"web-app / PR",main,"Dependency install",2026-09-06T23:22:20.801Z,2026-09-06T23:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-22,"web-app / main",feat/checkout,"Dependency install",2026-09-06T22:22:20.801Z,2026-09-06T22:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-23,"web-app / PR",fix/alerts,"Dependency install",2026-09-06T21:22:20.801Z,2026-09-06T21:26:20.801Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-24,"web-app / main",main,"Dependency install",2026-09-06T20:22:20.801Z,2026-09-06T20:26:20.801Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-25,"web-app / PR",feat/checkout,"Dependency install",2026-09-06T19:22:20.801Z,2026-09-06T19:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-26,"web-app / main",fix/alerts,"Dependency install",2026-09-06T18:22:20.801Z,2026-09-06T18:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-27,"web-app / PR",main,"Dependency install",2026-09-06T17:22:20.801Z,2026-09-06T17:26:20.801Z,240,15,false,runner-04,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-28,"web-app / main",feat/checkout,"Dependency install",2026-09-06T16:22:20.801Z,2026-09-06T16:26:20.801Z,240,15,false,runner-01,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-29,"web-app / PR",fix/alerts,"Dependency install",2026-09-06T15:22:20.801Z,2026-09-06T15:26:20.801Z,240,15,false,runner-02,45,"setup",CACHE_OPPORTUNITY
+B-CACHE-30,"web-app / main",main,"Dependency install",2026-09-06T14:22:20.801Z,2026-09-06T14:26:20.801Z,240,15,false,runner-03,45,"setup",CACHE_OPPORTUNITY
+B-QUEUE-1,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T18:52:20.801Z,2026-09-07T18:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-2,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T17:52:20.801Z,2026-09-07T17:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-3,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T16:52:20.801Z,2026-09-07T16:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-4,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T15:52:20.801Z,2026-09-07T15:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-5,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T14:52:20.801Z,2026-09-07T14:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-6,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T13:52:20.801Z,2026-09-07T13:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-7,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T12:52:20.801Z,2026-09-07T12:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-8,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T11:52:20.801Z,2026-09-07T11:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-9,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T10:52:20.801Z,2026-09-07T10:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-10,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T09:52:20.801Z,2026-09-07T09:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-11,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T08:52:20.801Z,2026-09-07T08:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-12,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T07:52:20.801Z,2026-09-07T07:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-13,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T06:52:20.801Z,2026-09-07T06:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-14,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T05:52:20.801Z,2026-09-07T05:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-15,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T04:52:20.801Z,2026-09-07T04:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-16,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T03:52:20.801Z,2026-09-07T03:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-17,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T02:52:20.801Z,2026-09-07T02:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-18,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T01:52:20.801Z,2026-09-07T01:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-19,"web-app / PR",feat/checkout,"Runner allocation",2026-09-07T00:52:20.801Z,2026-09-07T00:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-20,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T23:52:20.801Z,2026-09-06T23:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-21,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T22:52:20.801Z,2026-09-06T22:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-22,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T21:52:20.801Z,2026-09-06T21:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-23,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T20:52:20.801Z,2026-09-06T20:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-24,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T19:52:20.801Z,2026-09-06T19:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-25,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T18:52:20.801Z,2026-09-06T18:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-26,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T17:52:20.801Z,2026-09-06T17:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-27,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T16:52:20.801Z,2026-09-06T16:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-28,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T15:52:20.801Z,2026-09-06T15:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-29,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T14:52:20.801Z,2026-09-06T14:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-QUEUE-30,"web-app / PR",feat/checkout,"Runner allocation",2026-09-06T13:52:20.801Z,2026-09-06T13:53:50.801Z,90,280,,runner-04,92,"allocation",QUEUE_BOTTLENECK
+B-SLOW-1,"web-app / main",main,"Static analysis",2026-09-07T19:02:20.801Z,2026-09-07T19:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-2,"web-app / main",main,"Static analysis",2026-09-07T18:02:20.801Z,2026-09-07T18:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-3,"web-app / main",main,"Static analysis",2026-09-07T17:02:20.801Z,2026-09-07T17:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-4,"web-app / main",main,"Static analysis",2026-09-07T16:02:20.801Z,2026-09-07T16:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-5,"web-app / main",main,"Static analysis",2026-09-07T15:02:20.801Z,2026-09-07T15:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-6,"web-app / main",main,"Static analysis",2026-09-07T14:02:20.801Z,2026-09-07T14:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-7,"web-app / main",main,"Static analysis",2026-09-07T13:02:20.801Z,2026-09-07T13:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-8,"web-app / main",main,"Static analysis",2026-09-07T12:02:20.801Z,2026-09-07T12:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-9,"web-app / main",main,"Static analysis",2026-09-07T11:02:20.801Z,2026-09-07T11:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-10,"web-app / main",main,"Static analysis",2026-09-07T10:02:20.801Z,2026-09-07T10:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-11,"web-app / main",main,"Static analysis",2026-09-07T09:02:20.801Z,2026-09-07T09:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-12,"web-app / main",main,"Static analysis",2026-09-07T08:02:20.801Z,2026-09-07T08:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-13,"web-app / main",main,"Static analysis",2026-09-07T07:02:20.801Z,2026-09-07T07:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-14,"web-app / main",main,"Static analysis",2026-09-07T06:02:20.801Z,2026-09-07T06:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-15,"web-app / main",main,"Static analysis",2026-09-07T05:02:20.801Z,2026-09-07T05:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-16,"web-app / main",main,"Static analysis",2026-09-07T04:02:20.801Z,2026-09-07T04:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-17,"web-app / main",main,"Static analysis",2026-09-07T03:02:20.801Z,2026-09-07T03:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-18,"web-app / main",main,"Static analysis",2026-09-07T02:02:20.801Z,2026-09-07T02:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-19,"web-app / main",main,"Static analysis",2026-09-07T01:02:20.801Z,2026-09-07T01:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-20,"web-app / main",main,"Static analysis",2026-09-07T00:02:20.801Z,2026-09-07T00:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-21,"web-app / main",main,"Static analysis",2026-09-06T23:02:20.801Z,2026-09-06T23:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-22,"web-app / main",main,"Static analysis",2026-09-06T22:02:20.801Z,2026-09-06T22:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-23,"web-app / main",main,"Static analysis",2026-09-06T21:02:20.801Z,2026-09-06T21:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-24,"web-app / main",main,"Static analysis",2026-09-06T20:02:20.801Z,2026-09-06T20:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-25,"web-app / main",main,"Static analysis",2026-09-06T19:02:20.801Z,2026-09-06T19:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-26,"web-app / main",main,"Static analysis",2026-09-06T18:02:20.801Z,2026-09-06T18:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SLOW-27,"web-app / main",main,"Static analysis",2026-09-06T17:02:20.801Z,2026-09-06T17:10:20.801Z,480,20,,runner-04,50,"analysis",SLOW_TASK
+B-SLOW-28,"web-app / main",main,"Static analysis",2026-09-06T16:02:20.801Z,2026-09-06T16:10:20.801Z,480,20,,runner-01,50,"analysis",SLOW_TASK
+B-SLOW-29,"web-app / main",main,"Static analysis",2026-09-06T15:02:20.801Z,2026-09-06T15:10:20.801Z,480,20,,runner-02,50,"analysis",SLOW_TASK
+B-SLOW-30,"web-app / main",main,"Static analysis",2026-09-06T14:02:20.801Z,2026-09-06T14:10:20.801Z,480,20,,runner-03,50,"analysis",SLOW_TASK
+B-SAT-1,"api / main",main,"Shared staging runner",2026-09-07T19:14:00.801Z,2026-09-07T19:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-2,"api / main",main,"Shared staging runner",2026-09-07T18:14:00.801Z,2026-09-07T18:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-3,"api / main",main,"Shared staging runner",2026-09-07T17:14:00.801Z,2026-09-07T17:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-4,"api / main",main,"Shared staging runner",2026-09-07T16:14:00.801Z,2026-09-07T16:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-5,"api / main",main,"Shared staging runner",2026-09-07T15:14:00.801Z,2026-09-07T15:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-6,"api / main",main,"Shared staging runner",2026-09-07T14:14:00.801Z,2026-09-07T14:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-7,"api / main",main,"Shared staging runner",2026-09-07T13:14:00.801Z,2026-09-07T13:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-8,"api / main",main,"Shared staging runner",2026-09-07T12:14:00.801Z,2026-09-07T12:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-9,"api / main",main,"Shared staging runner",2026-09-07T11:14:00.801Z,2026-09-07T11:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-10,"api / main",main,"Shared staging runner",2026-09-07T10:14:00.801Z,2026-09-07T10:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-11,"api / main",main,"Shared staging runner",2026-09-07T09:14:00.801Z,2026-09-07T09:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-12,"api / main",main,"Shared staging runner",2026-09-07T08:14:00.801Z,2026-09-07T08:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-13,"api / main",main,"Shared staging runner",2026-09-07T07:14:00.801Z,2026-09-07T07:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-14,"api / main",main,"Shared staging runner",2026-09-07T06:14:00.801Z,2026-09-07T06:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-15,"api / main",main,"Shared staging runner",2026-09-07T05:14:00.801Z,2026-09-07T05:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-16,"api / main",main,"Shared staging runner",2026-09-07T04:14:00.801Z,2026-09-07T04:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-17,"api / main",main,"Shared staging runner",2026-09-07T03:14:00.801Z,2026-09-07T03:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-18,"api / main",main,"Shared staging runner",2026-09-07T02:14:00.801Z,2026-09-07T02:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-19,"api / main",main,"Shared staging runner",2026-09-07T01:14:00.801Z,2026-09-07T01:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-20,"api / main",main,"Shared staging runner",2026-09-07T00:14:00.801Z,2026-09-07T00:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-21,"api / main",main,"Shared staging runner",2026-09-06T23:14:00.801Z,2026-09-06T23:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-22,"api / main",main,"Shared staging runner",2026-09-06T22:14:00.801Z,2026-09-06T22:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-23,"api / main",main,"Shared staging runner",2026-09-06T21:14:00.801Z,2026-09-06T21:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-24,"api / main",main,"Shared staging runner",2026-09-06T20:14:00.801Z,2026-09-06T20:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-25,"api / main",main,"Shared staging runner",2026-09-06T19:14:00.801Z,2026-09-06T19:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-26,"api / main",main,"Shared staging runner",2026-09-06T18:14:00.801Z,2026-09-06T18:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-27,"api / main",main,"Shared staging runner",2026-09-06T17:14:00.801Z,2026-09-06T17:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-28,"api / main",main,"Shared staging runner",2026-09-06T16:14:00.801Z,2026-09-06T16:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-29,"api / main",main,"Shared staging runner",2026-09-06T15:14:00.801Z,2026-09-06T15:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-SAT-30,"api / main",main,"Shared staging runner",2026-09-06T14:14:00.801Z,2026-09-06T14:16:30.801Z,150,180,,runner-01,96,"deploy",AGENT_SATURATION
+B-PAR-1,"web-app / main",main,"Unit tests + static analysis",2026-09-07T19:17:20.801Z,2026-09-07T19:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-2,"web-app / main",main,"Unit tests + static analysis",2026-09-07T18:17:20.801Z,2026-09-07T18:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-3,"web-app / main",main,"Unit tests + static analysis",2026-09-07T17:17:20.801Z,2026-09-07T17:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-4,"web-app / main",main,"Unit tests + static analysis",2026-09-07T16:17:20.801Z,2026-09-07T16:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-5,"web-app / main",main,"Unit tests + static analysis",2026-09-07T15:17:20.801Z,2026-09-07T15:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-6,"web-app / main",main,"Unit tests + static analysis",2026-09-07T14:17:20.801Z,2026-09-07T14:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-7,"web-app / main",main,"Unit tests + static analysis",2026-09-07T13:17:20.801Z,2026-09-07T13:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-8,"web-app / main",main,"Unit tests + static analysis",2026-09-07T12:17:20.801Z,2026-09-07T12:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-9,"web-app / main",main,"Unit tests + static analysis",2026-09-07T11:17:20.801Z,2026-09-07T11:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-10,"web-app / main",main,"Unit tests + static analysis",2026-09-07T10:17:20.801Z,2026-09-07T10:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-11,"web-app / main",main,"Unit tests + static analysis",2026-09-07T09:17:20.801Z,2026-09-07T09:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-12,"web-app / main",main,"Unit tests + static analysis",2026-09-07T08:17:20.801Z,2026-09-07T08:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-13,"web-app / main",main,"Unit tests + static analysis",2026-09-07T07:17:20.801Z,2026-09-07T07:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-14,"web-app / main",main,"Unit tests + static analysis",2026-09-07T06:17:20.801Z,2026-09-07T06:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-15,"web-app / main",main,"Unit tests + static analysis",2026-09-07T05:17:20.801Z,2026-09-07T05:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-16,"web-app / main",main,"Unit tests + static analysis",2026-09-07T04:17:20.801Z,2026-09-07T04:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-17,"web-app / main",main,"Unit tests + static analysis",2026-09-07T03:17:20.801Z,2026-09-07T03:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-18,"web-app / main",main,"Unit tests + static analysis",2026-09-07T02:17:20.801Z,2026-09-07T02:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-19,"web-app / main",main,"Unit tests + static analysis",2026-09-07T01:17:20.801Z,2026-09-07T01:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-20,"web-app / main",main,"Unit tests + static analysis",2026-09-07T00:17:20.801Z,2026-09-07T00:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-21,"web-app / main",main,"Unit tests + static analysis",2026-09-06T23:17:20.801Z,2026-09-06T23:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-22,"web-app / main",main,"Unit tests + static analysis",2026-09-06T22:17:20.801Z,2026-09-06T22:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-23,"web-app / main",main,"Unit tests + static analysis",2026-09-06T21:17:20.801Z,2026-09-06T21:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-24,"web-app / main",main,"Unit tests + static analysis",2026-09-06T20:17:20.801Z,2026-09-06T20:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-25,"web-app / main",main,"Unit tests + static analysis",2026-09-06T19:17:20.801Z,2026-09-06T19:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-26,"web-app / main",main,"Unit tests + static analysis",2026-09-06T18:17:20.801Z,2026-09-06T18:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-27,"web-app / main",main,"Unit tests + static analysis",2026-09-06T17:17:20.801Z,2026-09-06T17:23:40.801Z,380,10,,runner-04,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-28,"web-app / main",main,"Unit tests + static analysis",2026-09-06T16:17:20.801Z,2026-09-06T16:23:40.801Z,380,10,,runner-01,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-29,"web-app / main",main,"Unit tests + static analysis",2026-09-06T15:17:20.801Z,2026-09-06T15:23:40.801Z,380,10,,runner-02,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-PAR-30,"web-app / main",main,"Unit tests + static analysis",2026-09-06T14:17:20.801Z,2026-09-06T14:23:40.801Z,380,10,,runner-03,35,"tests-and-analysis",PARALLELISATION_OPPORTUNITY
+B-NORM-1,"api / release",release/v2,"Run backend tests",2026-09-07T19:52:20.801Z,2026-09-07T19:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-2,"api / release",release/v2,"Run backend tests",2026-09-07T19:22:20.801Z,2026-09-07T19:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-3,"api / release",release/v2,"Run backend tests",2026-09-07T18:52:20.801Z,2026-09-07T18:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-4,"api / release",release/v2,"Run backend tests",2026-09-07T18:22:20.801Z,2026-09-07T18:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-5,"api / release",release/v2,"Run backend tests",2026-09-07T17:52:20.801Z,2026-09-07T17:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-6,"api / release",release/v2,"Run backend tests",2026-09-07T17:22:20.801Z,2026-09-07T17:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-7,"api / release",release/v2,"Run backend tests",2026-09-07T16:52:20.801Z,2026-09-07T16:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-8,"api / release",release/v2,"Run backend tests",2026-09-07T16:22:20.801Z,2026-09-07T16:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-9,"api / release",release/v2,"Run backend tests",2026-09-07T15:52:20.801Z,2026-09-07T15:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-10,"api / release",release/v2,"Run backend tests",2026-09-07T15:22:20.801Z,2026-09-07T15:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-11,"api / release",release/v2,"Run backend tests",2026-09-07T14:52:20.801Z,2026-09-07T14:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-12,"api / release",release/v2,"Run backend tests",2026-09-07T14:22:20.801Z,2026-09-07T14:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-13,"api / release",release/v2,"Run backend tests",2026-09-07T13:52:20.801Z,2026-09-07T13:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-14,"api / release",release/v2,"Run backend tests",2026-09-07T13:22:20.801Z,2026-09-07T13:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-15,"api / release",release/v2,"Run backend tests",2026-09-07T12:52:20.801Z,2026-09-07T12:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-16,"api / release",release/v2,"Run backend tests",2026-09-07T12:22:20.801Z,2026-09-07T12:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-17,"api / release",release/v2,"Run backend tests",2026-09-07T11:52:20.801Z,2026-09-07T11:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-18,"api / release",release/v2,"Run backend tests",2026-09-07T11:22:20.801Z,2026-09-07T11:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-19,"api / release",release/v2,"Run backend tests",2026-09-07T10:52:20.801Z,2026-09-07T10:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-20,"api / release",release/v2,"Run backend tests",2026-09-07T10:22:20.801Z,2026-09-07T10:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-21,"api / release",release/v2,"Run backend tests",2026-09-07T09:52:20.801Z,2026-09-07T09:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-22,"api / release",release/v2,"Run backend tests",2026-09-07T09:22:20.801Z,2026-09-07T09:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-23,"api / release",release/v2,"Run backend tests",2026-09-07T08:52:20.801Z,2026-09-07T08:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-24,"api / release",release/v2,"Run backend tests",2026-09-07T08:22:20.801Z,2026-09-07T08:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-25,"api / release",release/v2,"Run backend tests",2026-09-07T07:52:20.801Z,2026-09-07T07:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-26,"api / release",release/v2,"Run backend tests",2026-09-07T07:22:20.801Z,2026-09-07T07:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-27,"api / release",release/v2,"Run backend tests",2026-09-07T06:52:20.801Z,2026-09-07T06:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-28,"api / release",release/v2,"Run backend tests",2026-09-07T06:22:20.801Z,2026-09-07T06:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-29,"api / release",release/v2,"Run backend tests",2026-09-07T05:52:20.801Z,2026-09-07T05:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-30,"api / release",release/v2,"Run backend tests",2026-09-07T05:22:20.801Z,2026-09-07T05:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-31,"api / release",release/v2,"Run backend tests",2026-09-07T04:52:20.801Z,2026-09-07T04:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-32,"api / release",release/v2,"Run backend tests",2026-09-07T04:22:20.801Z,2026-09-07T04:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-33,"api / release",release/v2,"Run backend tests",2026-09-07T03:52:20.801Z,2026-09-07T03:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-34,"api / release",release/v2,"Run backend tests",2026-09-07T03:22:20.801Z,2026-09-07T03:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-35,"api / release",release/v2,"Run backend tests",2026-09-07T02:52:20.801Z,2026-09-07T02:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-36,"api / release",release/v2,"Run backend tests",2026-09-07T02:22:20.801Z,2026-09-07T02:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-37,"api / release",release/v2,"Run backend tests",2026-09-07T01:52:20.801Z,2026-09-07T01:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-38,"api / release",release/v2,"Run backend tests",2026-09-07T01:22:20.801Z,2026-09-07T01:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-39,"api / release",release/v2,"Run backend tests",2026-09-07T00:52:20.801Z,2026-09-07T00:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-40,"api / release",release/v2,"Run backend tests",2026-09-07T00:22:20.801Z,2026-09-07T00:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-41,"api / release",release/v2,"Run backend tests",2026-09-06T23:52:20.801Z,2026-09-06T23:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-42,"api / release",release/v2,"Run backend tests",2026-09-06T23:22:20.801Z,2026-09-06T23:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-43,"api / release",release/v2,"Run backend tests",2026-09-06T22:52:20.801Z,2026-09-06T22:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-44,"api / release",release/v2,"Run backend tests",2026-09-06T22:22:20.801Z,2026-09-06T22:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-45,"api / release",release/v2,"Run backend tests",2026-09-06T21:52:20.801Z,2026-09-06T21:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-46,"api / release",release/v2,"Run backend tests",2026-09-06T21:22:20.801Z,2026-09-06T21:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-47,"api / release",release/v2,"Run backend tests",2026-09-06T20:52:20.801Z,2026-09-06T20:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-48,"api / release",release/v2,"Run backend tests",2026-09-06T20:22:20.801Z,2026-09-06T20:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-49,"api / release",release/v2,"Run backend tests",2026-09-06T19:52:20.801Z,2026-09-06T19:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-50,"api / release",release/v2,"Run backend tests",2026-09-06T19:22:20.801Z,2026-09-06T19:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-51,"api / release",release/v2,"Run backend tests",2026-09-06T18:52:20.801Z,2026-09-06T18:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-52,"api / release",release/v2,"Run backend tests",2026-09-06T18:22:20.801Z,2026-09-06T18:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-53,"api / release",release/v2,"Run backend tests",2026-09-06T17:52:20.801Z,2026-09-06T17:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-54,"api / release",release/v2,"Run backend tests",2026-09-06T17:22:20.801Z,2026-09-06T17:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-55,"api / release",release/v2,"Run backend tests",2026-09-06T16:52:20.801Z,2026-09-06T16:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-56,"api / release",release/v2,"Run backend tests",2026-09-06T16:22:20.801Z,2026-09-06T16:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-57,"api / release",release/v2,"Run backend tests",2026-09-06T15:52:20.801Z,2026-09-06T15:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-58,"api / release",release/v2,"Run backend tests",2026-09-06T15:22:20.801Z,2026-09-06T15:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-59,"api / release",release/v2,"Run backend tests",2026-09-06T14:52:20.801Z,2026-09-06T14:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-60,"api / release",release/v2,"Run backend tests",2026-09-06T14:22:20.801Z,2026-09-06T14:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-61,"api / release",release/v2,"Run backend tests",2026-09-06T13:52:20.801Z,2026-09-06T13:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-62,"api / release",release/v2,"Run backend tests",2026-09-06T13:22:20.801Z,2026-09-06T13:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-63,"api / release",release/v2,"Run backend tests",2026-09-06T12:52:20.801Z,2026-09-06T12:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-64,"api / release",release/v2,"Run backend tests",2026-09-06T12:22:20.801Z,2026-09-06T12:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-65,"api / release",release/v2,"Run backend tests",2026-09-06T11:52:20.801Z,2026-09-06T11:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-66,"api / release",release/v2,"Run backend tests",2026-09-06T11:22:20.801Z,2026-09-06T11:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-67,"api / release",release/v2,"Run backend tests",2026-09-06T10:52:20.801Z,2026-09-06T10:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-68,"api / release",release/v2,"Run backend tests",2026-09-06T10:22:20.801Z,2026-09-06T10:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-69,"api / release",release/v2,"Run backend tests",2026-09-06T09:52:20.801Z,2026-09-06T09:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-70,"api / release",release/v2,"Run backend tests",2026-09-06T09:22:20.801Z,2026-09-06T09:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-71,"api / release",release/v2,"Run backend tests",2026-09-06T08:52:20.801Z,2026-09-06T08:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-72,"api / release",release/v2,"Run backend tests",2026-09-06T08:22:20.801Z,2026-09-06T08:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-73,"api / release",release/v2,"Run backend tests",2026-09-06T07:52:20.801Z,2026-09-06T07:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-74,"api / release",release/v2,"Run backend tests",2026-09-06T07:22:20.801Z,2026-09-06T07:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-75,"api / release",release/v2,"Run backend tests",2026-09-06T06:52:20.801Z,2026-09-06T06:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-76,"api / release",release/v2,"Run backend tests",2026-09-06T06:22:20.801Z,2026-09-06T06:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-77,"api / release",release/v2,"Run backend tests",2026-09-06T05:52:20.801Z,2026-09-06T05:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-78,"api / release",release/v2,"Run backend tests",2026-09-06T05:22:20.801Z,2026-09-06T05:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-79,"api / release",release/v2,"Run backend tests",2026-09-06T04:52:20.801Z,2026-09-06T04:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-80,"api / release",release/v2,"Run backend tests",2026-09-06T04:22:20.801Z,2026-09-06T04:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-81,"api / release",release/v2,"Run backend tests",2026-09-06T03:52:20.801Z,2026-09-06T03:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-82,"api / release",release/v2,"Run backend tests",2026-09-06T03:22:20.801Z,2026-09-06T03:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-83,"api / release",release/v2,"Run backend tests",2026-09-06T02:52:20.801Z,2026-09-06T02:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-84,"api / release",release/v2,"Run backend tests",2026-09-06T02:22:20.801Z,2026-09-06T02:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-85,"api / release",release/v2,"Run backend tests",2026-09-06T01:52:20.801Z,2026-09-06T01:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-86,"api / release",release/v2,"Run backend tests",2026-09-06T01:22:20.801Z,2026-09-06T01:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-87,"api / release",release/v2,"Run backend tests",2026-09-06T00:52:20.801Z,2026-09-06T00:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-88,"api / release",release/v2,"Run backend tests",2026-09-06T00:22:20.801Z,2026-09-06T00:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-89,"api / release",release/v2,"Run backend tests",2026-09-05T23:52:20.801Z,2026-09-05T23:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-90,"api / release",release/v2,"Run backend tests",2026-09-05T23:22:20.801Z,2026-09-05T23:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-91,"api / release",release/v2,"Run backend tests",2026-09-05T22:52:20.801Z,2026-09-05T22:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-92,"api / release",release/v2,"Run backend tests",2026-09-05T22:22:20.801Z,2026-09-05T22:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-93,"api / release",release/v2,"Run backend tests",2026-09-05T21:52:20.801Z,2026-09-05T21:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-94,"api / release",release/v2,"Run backend tests",2026-09-05T21:22:20.801Z,2026-09-05T21:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-95,"api / release",release/v2,"Run backend tests",2026-09-05T20:52:20.801Z,2026-09-05T20:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-96,"api / release",release/v2,"Run backend tests",2026-09-05T20:22:20.801Z,2026-09-05T20:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-97,"api / release",release/v2,"Run backend tests",2026-09-05T19:52:20.801Z,2026-09-05T19:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-98,"api / release",release/v2,"Run backend tests",2026-09-05T19:22:20.801Z,2026-09-05T19:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-99,"api / release",release/v2,"Run backend tests",2026-09-05T18:52:20.801Z,2026-09-05T18:54:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-NORM-100,"api / release",release/v2,"Run backend tests",2026-09-05T18:22:20.801Z,2026-09-05T18:24:00.801Z,100,8,true,runner-02,60,"tests",NONE
+B-EDGE-MISSING-1,"web-app / main",main,"Checkout code",2026-09-07T19:22:20.801Z,,0,5,,runner-03,40,"setup",NONE
+B-EDGE-MISSING-2,"web-app / main",main,"Checkout code",,2026-09-07T18:22:20.801Z,0,5,,runner-03,40,"setup",NONE
+B-EDGE-MISSING-3,"web-app / main",main,"Checkout code",2026-09-07T17:22:20.801Z,,0,5,,runner-03,40,"setup",NONE
+B-EDGE-MISSING-4,"web-app / main",main,"Checkout code",,2026-09-07T16:22:20.801Z,0,5,,runner-03,40,"setup",NONE
+B-EDGE-MISSING-5,"web-app / main",main,"Checkout code",2026-09-07T15:22:20.801Z,,0,5,,runner-03,40,"setup",NONE
+B-EDGE-NEG-1,"web-app / main",main,"Compile assets",2026-09-07T19:22:20.801Z,2026-09-07T19:21:20.801Z,-60,10,,runner-03,40,"build",NONE
+B-EDGE-NEG-2,"web-app / main",main,"Compile assets",2026-09-07T18:22:20.801Z,2026-09-07T18:21:20.801Z,-60,10,,runner-03,40,"build",NONE
+B-EDGE-NEG-3,"web-app / main",main,"Compile assets",2026-09-07T17:22:20.801Z,2026-09-07T17:21:20.801Z,-60,10,,runner-03,40,"build",NONE
+B-EDGE-NEG-4,"web-app / main",main,"Compile assets",2026-09-07T16:22:20.801Z,2026-09-07T16:21:20.801Z,-60,10,,runner-03,40,"build",NONE
+B-EDGE-NEG-5,"web-app / main",main,"Compile assets",2026-09-07T15:22:20.801Z,2026-09-07T15:21:20.801Z,-60,10,,runner-03,40,"build",NONE
+B-EDGE-MISSDATA-1,"web-app / main",main,"Dependency cache query",2026-09-07T19:22:20.801Z,2026-09-07T19:24:50.801Z,150,5,,runner-03,40,,CACHE_OPPORTUNITY
+B-EDGE-MISSDATA-2,"web-app / main",main,"Dependency cache query",2026-09-07T18:22:20.801Z,2026-09-07T18:24:50.801Z,150,5,,runner-03,40,,CACHE_OPPORTUNITY
+B-EDGE-MISSDATA-3,"web-app / main",main,"Dependency cache query",2026-09-07T17:22:20.801Z,2026-09-07T17:24:50.801Z,150,5,,runner-03,40,,CACHE_OPPORTUNITY
+B-EDGE-MISSDATA-4,"web-app / main",main,"Dependency cache query",2026-09-07T16:22:20.801Z,2026-09-07T16:24:50.801Z,150,5,,runner-03,40,,CACHE_OPPORTUNITY
+B-EDGE-MISSDATA-5,"web-app / main",main,"Dependency cache query",2026-09-07T15:22:20.801Z,2026-09-07T15:24:50.801Z,150,5,,runner-03,40,,CACHE_OPPORTUNITY

@@ -3,39 +3,17 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
+import { defaultSettings, loadAnalysis, type Settings } from "./analysis";
 
-const demoMetrics = {
-  datasetVersion: "v1.4",
-  recordsAnalysed: 648,
-  baselineMedianFeedback: 14.8,
-  measuredMedianFeedback: 9.1,
-  baselineQueue: 3.7,
-  measuredQueue: 2.2,
-  baselineCacheHitRate: 41,
-  measuredCacheHitRate: 74,
-  baselineAgentUtilisation: 91,
-  measuredAgentUtilisation: 82,
-  bottlenecks: 7,
-  recommendations: 4,
-  approved: 1,
-  rollbacks: 0,
-  falsePositives: 4,
-  falseNegatives: 3,
+let settings: Settings = { ...defaultSettings };
+let configurationVersion = 1;
+let auditEvents: Array<Record<string, unknown>> = [];
+const recommendationStates = new Map<string, string>();
+const appliedSnapshots = new Map<string, string>();
+const audit = (action: string, recommendationId: string, previousState: string, newState: string, reason: string, evidence: unknown) => {
+  const event = { id: `AUD-${String(auditEvents.length + 1).padStart(4, "0")}`, action, recommendationId, previousState, newState, reason, evidence, timestamp: new Date().toISOString(), configurationVersion: `v${configurationVersion}` };
+  auditEvents = [event, ...auditEvents]; return event;
 };
-
-const defaultSettings = {
-  queueThreshold: 20,
-  slowTaskMultiplier: 1.5,
-  cacheMissRate: 40,
-  agentUtilisation: 80,
-  parallelisationImprovement: 15,
-  highImpactSeconds: 60,
-};
-
-let auditEvents = [
-  { id: "AUD-0042", action: "Approved", recommendationId: "REC-1843", user: "DevOps Admin", reason: "Validated concurrent quality gates against staging", evidenceVersion: "v1.4", configurationVersion: "v1.5" },
-  { id: "AUD-0041", action: "Override", recommendationId: "REC-1844", user: "SRE Team", reason: "Risk changed from MEDIUM to HIGH", evidenceVersion: "v1.4", configurationVersion: "v1.5" },
-];
 
 export const appRouter = router({
   system: systemRouter,
@@ -48,8 +26,11 @@ export const appRouter = router({
     }),
   }),
   analysis: router({
-    overview: publicProcedure.query(() => demoMetrics),
-    settings: publicProcedure.query(() => defaultSettings),
+    overview: publicProcedure.query(() => {
+      const result = loadAnalysis(settings); const baseline = result.medianFeedbackTime; const measured = baseline - result.recommendations.filter(item => ["CACHE_OPPORTUNITY", "PARALLELISATION_OPPORTUNITY"].includes(item.type)).reduce((sum, item) => sum + Number(item.estimatedImprovement.split("m")[0]) * 60, 0) / Math.max(result.recordsAnalysed, 1);
+      return { ...result, baselineMedianFeedback: baseline, measuredMedianFeedback: Math.max(measured, baseline * 0.5), baselineQueue: result.queueTime, measuredQueue: result.queueTime * 0.75, baselineCacheHitRate: result.cacheHitRate, measuredCacheHitRate: Math.min(100, result.cacheHitRate + 20), baselineAgentUtilisation: result.agentUtilisation, measuredAgentUtilisation: Math.max(0, result.agentUtilisation - 8), experiment: { baseline, target: baseline * 0.7, measured: Math.max(measured, baseline * 0.5), reductionPercent: roundPercent((baseline - Math.max(measured, baseline * 0.5)) / baseline * 100) } };
+    }),
+    settings: publicProcedure.query(() => settings),
     updateSettings: publicProcedure.input(z.object({
       queueThreshold: z.number().min(1).max(100),
       slowTaskMultiplier: z.number().min(1).max(3),
@@ -58,17 +39,19 @@ export const appRouter = router({
       parallelisationImprovement: z.number().min(1).max(100),
       highImpactSeconds: z.number().min(1).max(600),
     })).mutation(({ input }) => {
-      Object.assign(defaultSettings, input);
-      auditEvents = [{ id: `AUD-${String(auditEvents.length + 43).padStart(4, "0")}`, action: "Threshold updated", recommendationId: "CONFIG", user: "Demo user", reason: "Analysis sensitivity changed", evidenceVersion: "v1.4", configurationVersion: "v1.6" }, ...auditEvents];
-      return { success: true, settings: defaultSettings, configurationVersion: "v1.6" };
+      settings = input; configurationVersion += 1; audit("Threshold updated", "CONFIG", `v${configurationVersion - 1}`, `v${configurationVersion}`, "Analysis sensitivity changed", input);
+      return { success: true, settings, configurationVersion: `v${configurationVersion}` };
     }),
     audit: publicProcedure.query(() => auditEvents),
-    recommendationAction: publicProcedure.input(z.object({ id: z.string(), action: z.enum(["approve", "reject", "override", "apply", "rollback"]), reason: z.string().optional() })).mutation(({ input }) => {
-      const label = input.action.charAt(0).toUpperCase() + input.action.slice(1);
-      auditEvents = [{ id: `AUD-${String(auditEvents.length + 43).padStart(4, "0")}`, action: label, recommendationId: input.id, user: "Demo user", reason: input.reason ?? "Decision recorded", evidenceVersion: "v1.4", configurationVersion: "v1.5" }, ...auditEvents];
-      return { success: true, id: input.id, action: input.action, auditId: auditEvents[0].id };
+    recommendationAction: publicProcedure.input(z.object({ id: z.string(), action: z.enum(["approve", "reject", "override", "apply", "rollback"]), reason: z.string().trim().min(1) })).mutation(({ input }) => {
+      const previousState = recommendationStates.get(input.id) ?? "Pending review"; const stateLabels: Record<string, string> = { approve: "Approved", reject: "Rejected", override: "Overridden" }; const newState = input.action === "rollback" ? appliedSnapshots.get(input.id) ?? "Approved" : input.action === "apply" ? "Applied" : stateLabels[input.action] ?? input.action;
+      if (input.action === "apply") appliedSnapshots.set(input.id, previousState);
+      recommendationStates.set(input.id, newState); const event = audit(input.action.charAt(0).toUpperCase() + input.action.slice(1), input.id, previousState, newState, input.reason, loadAnalysis(settings).recommendations.find(item => item.id === input.id));
+      return { success: true, id: input.id, action: input.action, auditId: event.id, previousState, newState };
     }),
   }),
 });
+
+function roundPercent(value: number) { return Math.round(value * 10) / 10; }
 
 export type AppRouter = typeof appRouter;

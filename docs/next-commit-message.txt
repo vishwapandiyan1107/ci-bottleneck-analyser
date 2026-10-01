@@ -1,0 +1,8 @@
+feat: implement review feedback and end-to-end CI analysis flow
+
+- add empirical baseline definitions and reproducible validation summary
+- add deterministic CSV/JSON analysis and recommendation flow
+- add webhook streaming stub with idempotency and calculated REST analysis endpoint
+- add end-to-end integration tests for thresholds and event ingestion
+- add governed apply/rollback state restoration and persistent audit store
+- add canonical validation dataset and deterministic generation command

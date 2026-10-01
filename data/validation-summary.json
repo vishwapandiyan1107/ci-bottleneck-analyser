@@ -1,0 +1,40 @@
+{
+  "dataset": "data/ci_build_logs.csv",
+  "records": 648,
+  "central_sorted_duration_seconds": [
+    701.0,
+    702.0
+  ],
+  "baseline": {
+    "medianFeedbackMinutes": 11.69,
+    "p90FeedbackMinutes": 14.83,
+    "medianQueueMinutes": 3.4,
+    "meanCacheHitPct": 63.02,
+    "meanAgentUtilisationPct": 75.77
+  },
+  "experiment": {
+    "measuredMedianFeedbackMinutes": 9.87,
+    "measuredP90FeedbackMinutes": 13.18,
+    "measuredMedianQueueMinutes": 2.67,
+    "measuredMeanCacheHitPct": 74.65,
+    "measuredMeanAgentUtilisationPct": 74.66,
+    "medianReductionPct": 15.62,
+    "targetMedianFeedbackMinutes": 9.94,
+    "targetReductionPct": 15.0,
+    "operationalGuardrailMinutes": 10.0,
+    "absoluteTargetErrorPp": 0.62,
+    "relativeTargetErrorPct": 4.13,
+    "targetMet": true,
+    "errorDefinition": "absoluteTargetErrorPp = measuredReductionPct - targetReductionPct; relativeTargetErrorPct = abs(absoluteTargetErrorPp) / targetReductionPct * 100"
+  },
+  "labelCounts": {
+    "AGENT_SATURATION": 90,
+    "CACHE_OPPORTUNITY": 145,
+    "NONE": 93,
+    "PARALLELISATION_OPPORTUNITY": 99,
+    "QUEUE_BOTTLENECK": 123,
+    "SLOW_TASK": 98
+  },
+  "formula": "feedbackTime_i = durationSec_i; medianFeedbackTime = median(feedbackTime_i); for even n, median = (x[n/2] + x[n/2 + 1]) / 2; queueSec is a secondary metric and is not added again.",
+  "datasetVersion": "v2.2"
+}

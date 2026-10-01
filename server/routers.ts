@@ -1,19 +1,50 @@
+import fs from "node:fs";
+import path from "node:path";
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
-import { defaultSettings, loadAnalysis, type Settings } from "./analysis";
+import {
+  analyseBuilds,
+  parseCsv,
+  parseJson,
+  settingsSchema,
+  validateRecords,
+  type AnalysisSettings,
+} from "./analysisEngine";
+import {
+  appendAudit,
+  getStore,
+  saveSettings,
+  setRecommendations,
+  updateRecommendation,
+} from "./persistence";
 
-let settings: Settings = { ...defaultSettings };
-let configurationVersion = 1;
-let auditEvents: Array<Record<string, unknown>> = [];
-const recommendationStates = new Map<string, string>();
-const appliedSnapshots = new Map<string, string>();
-const audit = (action: string, recommendationId: string, previousState: string, newState: string, reason: string, evidence: unknown) => {
-  const event = { id: `AUD-${String(auditEvents.length + 1).padStart(4, "0")}`, action, recommendationId, previousState, newState, reason, evidence, timestamp: new Date().toISOString(), configurationVersion: `v${configurationVersion}` };
-  auditEvents = [event, ...auditEvents]; return event;
-};
+function loadDemoCsv() {
+  const candidates = [
+    path.resolve(process.cwd(), "data/ci_build_logs.csv"),
+    path.resolve(process.cwd(), "data/validation-builds.csv"),
+    path.resolve(process.cwd(), "../data/ci_build_logs.csv"),
+    path.resolve(process.cwd(), "../data/validation-builds.csv"),
+  ];
+  const file = candidates.find(fs.existsSync);
+  if (!file) throw new Error("Validation dataset is missing. Expected data/validation-builds.csv");
+  return fs.readFileSync(file, "utf8");
+}
+
+function runAnalysis(content: string, settings: AnalysisSettings, format: "csv" | "json" = "csv") {
+  const raw = format === "json" ? parseJson(content) : parseCsv(content);
+  const validation = validateRecords(raw);
+  const result = analyseBuilds(validation.valid, settings);
+  return {
+    ...result,
+    validationErrors: validation.errors.length,
+    errors: validation.errors.slice(0, 25),
+    validRecords: validation.valid.length,
+  };
+}
 
 export const appRouter = router({
   system: systemRouter,
@@ -27,31 +58,105 @@ export const appRouter = router({
   }),
   analysis: router({
     overview: publicProcedure.query(() => {
-      const result = loadAnalysis(settings); const baseline = result.medianFeedbackTime; const measured = baseline - result.recommendations.filter(item => ["CACHE_OPPORTUNITY", "PARALLELISATION_OPPORTUNITY"].includes(item.type)).reduce((sum, item) => sum + Number(item.estimatedImprovement.split("m")[0]) * 60, 0) / Math.max(result.recordsAnalysed, 1);
-      return { ...result, baselineMedianFeedback: baseline, measuredMedianFeedback: Math.max(measured, baseline * 0.5), baselineQueue: result.queueTime, measuredQueue: result.queueTime * 0.75, baselineCacheHitRate: result.cacheHitRate, measuredCacheHitRate: Math.min(100, result.cacheHitRate + 20), baselineAgentUtilisation: result.agentUtilisation, measuredAgentUtilisation: Math.max(0, result.agentUtilisation - 8), experiment: { baseline, target: baseline * 0.7, measured: Math.max(measured, baseline * 0.5), reductionPercent: roundPercent((baseline - Math.max(measured, baseline * 0.5)) / baseline * 100) } };
+      const store = getStore();
+      const result = runAnalysis(loadDemoCsv(), store.settings);
+      setRecommendations(result.recommendations);
+      return result;
     }),
-    settings: publicProcedure.query(() => settings),
-    updateSettings: publicProcedure.input(z.object({
-      queueThreshold: z.number().min(1).max(100),
-      slowTaskMultiplier: z.number().min(1).max(3),
-      cacheMissRate: z.number().min(1).max(100),
-      agentUtilisation: z.number().min(1).max(100),
-      parallelisationImprovement: z.number().min(1).max(100),
-      highImpactSeconds: z.number().min(1).max(600),
-    })).mutation(({ input }) => {
-      settings = input; configurationVersion += 1; audit("Threshold updated", "CONFIG", `v${configurationVersion - 1}`, `v${configurationVersion}`, "Analysis sensitivity changed", input);
-      return { success: true, settings, configurationVersion: `v${configurationVersion}` };
+
+    settings: publicProcedure.query(() => {
+      const store = getStore();
+      return { ...store.settings, configurationVersion: `v${store.configurationVersion}` };
     }),
-    audit: publicProcedure.query(() => auditEvents),
-    recommendationAction: publicProcedure.input(z.object({ id: z.string(), action: z.enum(["approve", "reject", "override", "apply", "rollback"]), reason: z.string().trim().min(1) })).mutation(({ input }) => {
-      const previousState = recommendationStates.get(input.id) ?? "Pending review"; const stateLabels: Record<string, string> = { approve: "Approved", reject: "Rejected", override: "Overridden" }; const newState = input.action === "rollback" ? appliedSnapshots.get(input.id) ?? "Approved" : input.action === "apply" ? "Applied" : stateLabels[input.action] ?? input.action;
-      if (input.action === "apply") appliedSnapshots.set(input.id, previousState);
-      recommendationStates.set(input.id, newState); const event = audit(input.action.charAt(0).toUpperCase() + input.action.slice(1), input.id, previousState, newState, input.reason, loadAnalysis(settings).recommendations.find(item => item.id === input.id));
-      return { success: true, id: input.id, action: input.action, auditId: event.id, previousState, newState };
+
+    updateSettings: publicProcedure
+      .input(settingsSchema)
+      .mutation(({ input }) => {
+        const store = saveSettings(input);
+        const version = `v${store.configurationVersion}`;
+        appendAudit({
+          action: "Threshold updated",
+          recommendationId: "CONFIG",
+          user: "Demo user",
+          reason: "Analysis sensitivity changed",
+          evidenceVersion: "v2.2",
+          configurationVersion: version,
+        });
+        return { success: true, settings: store.settings, configurationVersion: version };
+      }),
+
+    analyseCsv: publicProcedure
+      .input(z.object({ csv: z.string().min(10).max(5_000_000), format: z.enum(["csv", "json"]).default("csv"), datasetVersion: z.string().default("uploaded") }))
+      .mutation(({ input }) => {
+        const store = getStore();
+        const result = runAnalysis(input.csv, store.settings, input.format);
+        setRecommendations(result.recommendations);
+        appendAudit({
+          action: "Analysis completed",
+          recommendationId: "ANALYSIS",
+          user: "Demo user",
+          reason: `${result.validRecords} valid records analysed; ${result.validationErrors} records rejected.`,
+          evidenceVersion: input.datasetVersion,
+          configurationVersion: `v${store.configurationVersion}`,
+        });
+        return result;
+      }),
+
+    demo: publicProcedure.mutation(() => {
+      const store = getStore();
+      const result = runAnalysis(loadDemoCsv(), store.settings);
+      setRecommendations(result.recommendations);
+      appendAudit({
+        action: "Demo dataset analysed",
+        recommendationId: "DATASET",
+        user: "Demo user",
+        reason: `Loaded ${result.validRecords} validated records from the reproducible validation dataset.`,
+        evidenceVersion: result.datasetVersion,
+        configurationVersion: `v${store.configurationVersion}`,
+      });
+      return result;
     }),
+
+    audit: publicProcedure.query(() => getStore().audit),
+
+    recommendations: publicProcedure.query(() => getStore().recommendations),
+
+    recommendationAction: publicProcedure
+      .input(z.object({
+        id: z.string().min(1),
+        action: z.enum(["approve", "reject", "override", "apply", "rollback"]),
+        reason: z.string().trim().min(3).max(500),
+      }))
+      .mutation(({ input }) => {
+        try {
+          const updated = updateRecommendation(input.id, input.action);
+          if (!updated) {
+            throw new TRPCError({ code: "NOT_FOUND", message: `Recommendation ${input.id} was not found.` });
+          }
+          const store = getStore();
+          const event = appendAudit({
+            action: input.action === "rollback" ? "Rolled back" : updated.status,
+            recommendationId: input.id,
+            user: "Demo user",
+            reason: input.reason,
+            evidenceVersion: "v2.2",
+            configurationVersion: `v${store.configurationVersion}`,
+          });
+          return {
+            success: true,
+            id: input.id,
+            action: input.action,
+            auditId: event.id,
+            status: updated.status,
+            previousStatus: updated.previousStatus,
+          };
+        } catch (error) {
+          if (error instanceof TRPCError) throw error;
+          throw new TRPCError({ code: "BAD_REQUEST", message: error instanceof Error ? error.message : "Decision rejected" });
+        }
+      }),
   }),
 });
 
-function roundPercent(value: number) { return Math.round(value * 10) / 10; }
-
 export type AppRouter = typeof appRouter;
+

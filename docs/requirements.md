@@ -1,22 +1,68 @@
-# CI Bottleneck Analyser Requirements
+# Requirements Specification
 
-## Dataset
-`data/ci_build_logs.csv` is the reproducible validation input. It contains the required build, timing, cache, agent, dependency, and `ground_truth` fields. Invalid timestamp and duration rows are retained for validation but excluded from analysis.
+## Goal
+Reduce median developer feedback time in an overloaded shared staging environment by identifying CI bottlenecks and providing evidence-backed cache and parallelisation recommendations.
 
-## Analysis
-`server/analysis.ts` parses and validates the CSV, calculates median feedback and queue time, cache hit/miss rate, task duration, agent utilisation, and parallelisation opportunities. Deterministic rules detect queue bottlenecks, slow tasks, cache opportunities, agent saturation, and parallelisation opportunities.
+## Inputs
+- Build duration (`durationSec`)
+- Queue duration (`queueSec`)
+- Task duration and task median
+- Cache hit rate
+- Agent utilisation
+- Dependency/parallelisation metadata
+- Build status
+- Optional queue/start/completion timestamps
 
-## Recommendations
-Recommendations are generated from detected records. They include evidence, metric value, threshold, affected build/task, estimated improvement, confidence, timestamp, and configuration version. No production result depends on demo metrics.
+## Primary metric definition
+For each valid record `i`, developer feedback time is the end-to-end elapsed CI duration represented by `durationSec`:
 
-## Experiment and evaluation
-The overview and experiment inputs are calculated from valid records. The experiment reports baseline, target, measured result, and median feedback-time reduction. `ground_truth` is evaluated as TP, TN, FP, FN, precision, recall, false-positive rate, and false-negative rate, with examples and reasons.
+`feedbackTime_i = durationSec_i`
 
-## Data quality
-Rows with missing timestamps or negative durations are rejected. Missing cache/dependency fields cannot create a cache recommendation. These behaviors are covered by automated tests.
+`medianFeedback = median(feedbackTime_1 ... feedbackTime_n)`
 
-## Workflow and audit
-Recommendation actions require a reason. Approve, reject, override, apply, and rollback transitions store action, recommendation ID, previous state, new state, reason, evidence, timestamp, and configuration version. Apply stores the previous state; rollback restores it and emits a rollback event.
+`queueSec` is reported separately and is not added again because it is already included in `durationSec`.
 
-## UI/API
-The existing UI is preserved. `/api/analysis` and the existing tRPC analysis procedures expose calculated results and workflow actions.
+For an even-sized dataset, if the sorted feedback values are `x(1) <= ... <= x(n)`, then:
+
+`medianFeedback = (x(n/2) + x(n/2 + 1)) / 2`
+
+For the canonical 648-record dataset, the central values are `701s` and `702s`, so the empirical baseline is `(701 + 702) / 2 = 701.5s = 11.69min`.
+
+## Experiment target and error analysis
+
+The experiment has an explicit target: **at least 15% reduction in median developer feedback time**, with an operational guardrail of **10 minutes or less**.
+
+`targetSeconds = baselineMedianSeconds × (1 - 0.15)`
+
+`measuredReductionPct = ((baselineMedianSeconds - measuredMedianSeconds) / baselineMedianSeconds) × 100`
+
+`absoluteTargetErrorPp = measuredReductionPct - 15`
+
+`relativeTargetErrorPct = |absoluteTargetErrorPp| / 15 × 100`
+
+The dashboard and API expose baseline, target, measured result, absolute percentage-point error, relative target error, absolute time saved and whether the target was met. This prevents a percentage improvement from being presented without a reproducible baseline or error definition.
+
+## Automated verification
+
+The verification suite contains unit tests for the deterministic rules and a real HTTP end-to-end suite for the integration boundary. The e2e matrix covers: agent-log ingestion, queue and agent threshold triggers, threshold changes affecting later events, malformed payload rejection, webhook idempotency, provider-native GitHub Actions normalization, audit recording and the calculated reviewer-facing analysis endpoint.
+
+## Outputs
+- Labelled bottlenecks
+- Confidence and severity
+- Evidence
+- Recommendations
+- Expected benefit
+- Risk
+- Proposed change
+- Rollback path
+- Audit event
+- Experiment baseline/target/measured metrics
+
+## Governance
+High-impact changes require human approval. Overrides require a reason. Apply and rollback use an explicit state machine and every action is recorded with evidence/configuration versions.
+
+## Secondary metrics
+P90 feedback time, queue time, cache hit rate, agent utilisation, precision, recall and F1.
+
+## Edge cases
+Missing telemetry, duplicate records, invalid durations, malformed/inconsistent timestamps, hidden dependencies and agent saturation are explicitly handled.

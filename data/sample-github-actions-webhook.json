@@ -1,0 +1,20 @@
+{
+  "provider": "github-actions",
+  "eventId": "gha-run-9001",
+  "eventType": "agent.log",
+  "payload": {
+    "workflow": "web-app / PR",
+    "run_id": "gha-9001",
+    "ref": "refs/heads/main",
+    "conclusion": "success",
+    "duration_sec": 900,
+    "queue_sec": 260,
+    "cache_hit_pct": 75,
+    "agent_utilization": 94,
+    "step": "shared staging runner",
+    "task_duration_sec": 120,
+    "task_median_sec": 120,
+    "dependency_known": true,
+    "agent_name": "runner-04"
+  }
+}

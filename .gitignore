@@ -113,14 +113,4 @@ temp/
 client/public/__manus__/version.json
 .project-config.json
 
-# Dependencies
-node_modules/
-
-# Environment variables / secrets.env.env.*
-!.env.example
-
-# Build output
-dist/
-
-# Vercel
-.vercel/
+server/runtime-store.json

@@ -1,0 +1,22 @@
+{
+  "provider": "github-actions",
+  "eventId": "evt-agent-demo-002",
+  "eventType": "agent.log",
+  "record": {
+    "buildId": "build-agent-demo-002",
+    "pipeline": "web-app / PR",
+    "branch": "feat/checkout",
+    "durationSec": 900,
+    "queueSec": 260,
+    "cacheHitPct": 75,
+    "agentUtilPct": 94,
+    "status": "Passed",
+    "task": "shared staging runner",
+    "taskDurationSec": 120,
+    "taskMedianSec": 120,
+    "dependencyKnown": true,
+    "parallelCandidate": false,
+    "sequentialSec": 0,
+    "parallelSec": 0
+  }
+}
